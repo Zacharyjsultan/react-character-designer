@@ -54,10 +54,10 @@ If you work on more than one feature at a time, you are guaranteed to multiply y
 
 files
 set state in maine
-controls 
+controls components shirt, pants, shoes
 dopdown menus in controls
 display photos in character
-set counters - pass to display
+set counters - pass to display increment
 input for phrases 
 catchphrase to display 
 render catch in display
