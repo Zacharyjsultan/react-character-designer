@@ -9,11 +9,11 @@ export default function Display({ shirtImg, pantImg, shoeImg }) {
       </div>
 
       <div>
-
+        <img src={`${process.env.Public_URL}/items/${pantImg}.png`}/>
       </div>
 
       <div>
-
+        <img src={`${process.env.Public_URL}/items/${shoeImg}.png`}/>
       </div>
 
     </div>

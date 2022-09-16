@@ -7,6 +7,7 @@ export default function Controls({ handleIncrement, shirtImg, setShirt, pantImg,
     <div className="character-controls">
 
       <div className="shirt-drop">
+
         <label>Shirts</label>
         <select name="top" value={ shirtImg } onChange={(e) => { setShirt(e.target.value); handleIncrement('shirtImg'); }}>
           <option value="one-shirt">shirt 1</option>
@@ -17,6 +18,7 @@ export default function Controls({ handleIncrement, shirtImg, setShirt, pantImg,
       </div>
 
       <div className="pants-drop">
+
         <label>Pants</label>
         <select name="middle" value={ pantImg } onChange={(e) => { setPant(e.target.value); handleIncrement('pantImg'); }}>
           <option value="one-pant">pant 1</option>
@@ -27,6 +29,7 @@ export default function Controls({ handleIncrement, shirtImg, setShirt, pantImg,
       </div>
 
       <div className="shoe-drop">
+        
         <label>Shoes</label>
         <select name="bottom" value={ shoeImg } onChange={(e) => { setShoe(e.target.value); handleIncrement('shoeImg'); }}>
           <option value="one-shoe">shoe 1</option>
