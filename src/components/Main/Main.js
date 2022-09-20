@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Character from '../Character/Character';
 import Controls from '../Controls/Controls';
 import Display from '../Display/Display';
 
@@ -17,12 +18,14 @@ export default function Main() {
         setPant={setPant}
         shoeImg={shoeImg}
         setShoe={setShoe}
+       
       />
       <Display 
         shirtImg={shirtImg}
         pantImg={pantImg}
         shoeImg={shoeImg}
       />
+      <Character />
     </div>
   );
 }
