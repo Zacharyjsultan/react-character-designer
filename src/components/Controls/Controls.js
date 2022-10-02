@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './Controls.css';
 
-export default function Controls({ shirtImg, setShirt, pantImg, setPant, shoeImg, setShoe, handleShirtIncrement, handlePantIncrement, handleShoeIncrement }) {
+export default function Controls({ shirtImg, setShirt, pantImg, setPant, shoeImg, setShoe, handleIncrement, setCatchphrases }) {
+  const [newCatchphrase, setNewCatchphrase] = useState('');
+  const addCatchphrase = () => {
+    if (!newCatchphrase) return;
+    setCatchphrases((prevState) => {
+      return ([...prevState, newCatchphrase]);
+    });
+  };
+
+  
   return (
 
     <><h1>Fit Picker</h1><div className="character-controls">
@@ -10,7 +19,7 @@ export default function Controls({ shirtImg, setShirt, pantImg, setPant, shoeImg
       <div className="shirt-drop">
 
         <label>Shirts</label>
-        <select name="top" value={shirtImg} onChange={(e) => { setShirt(e.target.value); handleShirtIncrement(); } }>
+        <select name="top" value={shirtImg} onChange={(e) => { setShirt(e.target.value); handleIncrement('shirtImg'); } }>
           <option value="one-shirt">shirt 1</option>
           <option value="two-shirt">shirt 2</option>
           <option value="three-shirt">shirt 3</option>
@@ -21,7 +30,7 @@ export default function Controls({ shirtImg, setShirt, pantImg, setPant, shoeImg
       <div className="pants-drop">
 
         <label>Pants</label>
-        <select name="middle" value={pantImg} onChange={(e) => { setPant(e.target.value); handlePantIncrement(); } }>
+        <select name="middle" value={pantImg} onChange={(e) => { setPant(e.target.value); handleIncrement('pantImg'); } }>
           <option value="one-pant">pant 1</option>
           <option value="two-pant">pant 2</option>
           <option value="three-pant">pant 3</option>
@@ -32,7 +41,7 @@ export default function Controls({ shirtImg, setShirt, pantImg, setPant, shoeImg
       <div className="shoe-drop">
 
         <label>Shoes</label>
-        <select name="bottom" value={shoeImg} onChange={(e) => { setShoe(e.target.value); handleShoeIncrement(); } }>
+        <select name="bottom" value={shoeImg} onChange={(e) => { setShoe(e.target.value); handleIncrement('shoeImg'); } }>
           <option value="one-shoe">shoe 1</option>
           <option value="two-shoe">shoe 2</option>
           <option value="three-shoe">shoe 3</option>
@@ -43,7 +52,7 @@ export default function Controls({ shirtImg, setShirt, pantImg, setPant, shoeImg
       <label>Catchphrase</label>
       <div className="catchphrase-area">
         <input placeholder="'write your catchphrase'" name="catchphrase"></input>
-
+        <button onClick={addCatchphrase}>Add</button>
       </div>
 
     </div></>
