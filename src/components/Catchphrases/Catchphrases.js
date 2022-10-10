@@ -4,7 +4,7 @@ import './Catchphrases.css';
 
 export default function Catchphrase({ catchphrases }) {
   return (
-    <div>
+    <div className="catchphres">
       Catchphrases
       {catchphrases.map((c) => (
         <li className="catchphrase" key={c}>
