@@ -1,16 +1,19 @@
 import React from 'react';
 
-export default function Character({ shirtChange, pantChange, shoeChange, catchphrases }) {
+export default function Display({ shirt, pant, shoe }) {
   return (
-    <div className='character-changes'>
-      <span className='characterChanges'>
-        You have changed the shirt <p>{`${shirtChange}`} </p> times, the pants <p>{`${pantChange}`}</p> times, and the Shoes <p>{`${shoeChange}`}</p>times.
-        <>
-        </>
-        <div> {catchphrases.map((catchphrase) => (
-          <li key={catchphrase}>{catchphrase}</li>
-        ))}</div>
-      </span>
+    <div className="display-fit">
+      <div>
+        <img src={`${process.env.Public_URL}/items/Shirts/${shirt}-shirt.png`} />
+      </div>
+
+      <div>
+        <img src={`${process.env.Public_URL}/items/Pants/${pant}-pant.png`} />
+      </div>
+
+      <div>
+        <img src={`${process.env.Public_URL}/items/Shoes/${shoe}-shoe.png`} />
+      </div>
     </div>
   );
 }

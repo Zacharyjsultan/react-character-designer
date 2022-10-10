@@ -1,21 +1,12 @@
 import React from 'react';
 
-export default function Display({ shirtImg, pantImg, shoeImg }) {
+export default function Display({ shirtCount, pantCount, shoeCount }) {
   return (
-    <div className="display-fit">
-      <div>
-        <img src={`${process.env.Public_URL}/items/${shirtImg}.png`}/>
-
-      </div>
-
-      <div>
-        <img src={`${process.env.Public_URL}/items/${pantImg}.png`}/>
-      </div>
-
-      <div>
-        <img src={`${process.env.Public_URL}/items/${shoeImg}.png`}/>
-      </div>
-
+    <div className="stat left">
+      <h1>Stats</h1>
+      <p>{shirtCount}</p>
+      <p>{pantCount}</p>
+      <p>{shoeCount}</p>
     </div>
   );
 }

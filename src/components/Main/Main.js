@@ -1,31 +1,46 @@
 import React, { useState } from 'react';
+import Catchphrases from '../Catchphrases/Catchphrases';
 import Character from '../Character/Character';
 import Controls from '../Controls/Controls';
 import Display from '../Display/Display';
 
 export default function Main() {
-  const [shirtImg, setShirt] = useState('one-shirt');
-  const [pantImg, setPant] = useState('one-pant');
-  const [shoeImg, setShoe] = useState('one-shoe');
+  const [shirt, setShirt] = useState('one');
+  const [pant, setPant] = useState('one');
+  const [shoe, setShoe] = useState('one');
 
+  const [shirtCount, setShirtCount] = useState(0);
+  const [pantCount, setPantCount] = useState(0);
+  const [shoeCount, setShoeCount] = useState(0);
+
+  const [catchphrases, setCatchphrases] = useState([]);
 
   return (
     <div>
-      <Controls 
-        shirtImg={shirtImg}
+      <Controls
+        shirt={shirt}
         setShirt={setShirt}
-        pantImg={pantImg}
+        pant={pant}
         setPant={setPant}
-        shoeImg={shoeImg}
+        shoe={shoe}
         setShoe={setShoe}
-       
+        shirtCount={shirtCount}
+        setShirtCount={setShirtCount}
+        pantCount={pantCount}
+        setPantCount={setPantCount}
+        shoeCount={shoeCount}
+        setShoeCount={setShoeCount}
+        setCatchphrases={setCatchphrases}
       />
-      <Display 
-        shirtImg={shirtImg}
-        pantImg={pantImg}
-        shoeImg={shoeImg}
+      <Display shirt={shirt} pant={pant} shoe={shoe} />
+      <Character
+        shirtCount={shirtCount}
+        pantCount={pantCount}
+        shoeCount={shoeCount}
+        catchphrases={catchphrases}
       />
-      <Character />
+
+      <Catchphrases catchphrases={catchphrases} />
     </div>
   );
 }
