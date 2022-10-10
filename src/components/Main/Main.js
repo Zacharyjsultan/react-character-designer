@@ -3,6 +3,7 @@ import Catchphrases from '../Catchphrases/Catchphrases';
 import Character from '../Character/Character';
 import Controls from '../Controls/Controls';
 import Display from '../Display/Display';
+import './Main.css';
 
 export default function Main() {
   const [shirt, setShirt] = useState('one');
@@ -16,7 +17,7 @@ export default function Main() {
   const [catchphrases, setCatchphrases] = useState([]);
 
   return (
-    <div>
+    <div className="box">
       <Controls
         shirt={shirt}
         setShirt={setShirt}
@@ -32,13 +33,13 @@ export default function Main() {
         setShoeCount={setShoeCount}
         setCatchphrases={setCatchphrases}
       />
-      <Display shirt={shirt} pant={pant} shoe={shoe} />
-      <Character
+      <Display
         shirtCount={shirtCount}
         pantCount={pantCount}
         shoeCount={shoeCount}
         catchphrases={catchphrases}
       />
+      <Character shirt={shirt} pant={pant} shoe={shoe} />
 
       <Catchphrases catchphrases={catchphrases} />
     </div>
