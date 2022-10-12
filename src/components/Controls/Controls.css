@@ -1,0 +1,15 @@
+h1 {
+  color: white;
+}
+
+.character-controls {
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  height: 170px;
+  width: 80vw;
+  max-width: 800px;
+  background-color: burlywood;
+  border: 20px;
+  text-align: center;
+}
